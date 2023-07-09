@@ -1,0 +1,9 @@
+import time 
+import math
+import random
+
+
+name  = "Becky"
+
+if isinstance(name, int) == False:
+    print("Yes, it's an integer")

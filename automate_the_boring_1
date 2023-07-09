@@ -1,0 +1,23 @@
+import math 
+import random
+import time
+
+
+# A Program to print out a user's PC number in all caps
+
+computer_number = input("Enter Your PC Number: ")
+
+print(f"Your computer number {computer_number.capitalize()}!")
+
+time.sleep(2.1)
+
+survey_response = input("Did I do a good job? Yes, or No"  ).upper()
+print(f"Your Response was --- {survey_response} ---")
+
+if survey_response == "YES":
+    print("Thank you, have a great day! :)")
+elif survey_response == "NO":
+    print("Sorry, I will do better next time! :()")
+else:
+    print("uh oh, something went wrong. Let's try again later")
+    
