@@ -8,7 +8,6 @@ import pyinputplus as pyip
 - Keep track of number of correct answers
 - 
 '''
-
 question_count = 5
 correct_count = 0
 question_max_time = 10
@@ -30,8 +29,6 @@ for question in range(question_count):
         print(f"Time is up! You have {question_max_time} seconds to answer each question")
     
     
-   
-
 if correct_count > (question_count / 2 + 1):
     print(f"You did great! You got {correct_count} questions correct.")
 else: 
