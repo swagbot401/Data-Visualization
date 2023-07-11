@@ -1,17 +1,25 @@
 import random, math, sys, os
 import pyinputplus as pyip
-import pathlib as Path
+
+from pathlib import Path
 
 homefolder = r"C:\Users\chris\Desktop" 
 homefolder_2 = r"C:\Users\chris\OneDrive"
+test_path = r"C:\Users\chris\OneDrive\Desktop\Auto Tech Station\Tech Consultant\Resume"
+
+test_path_m = test_path + "\resume2"
+print(test_path_m)
+
 
 
 
 mod_homefolder = homefolder.replace(os.sep, "/")
-print(mod_homefolder)
+# print(mod_homefolder)
 
 
-# mac = Path(homefolder)
+# print(Path.home())
+
+# print(Path.home())
 
 
 # print(mac)
@@ -33,6 +41,11 @@ print(mod_homefolder)
 # print(path_name2)
 # os.makedirs("C:\Users\chris\OneDrive\Desktop\test_folder")
 
+# path_name1 = Path("spam", "bacon", "eggs")
+# print(path_name1)
 
+# print(str(Path("spam", "cheese", "cake")))
 
-
+fol_1 = "red_cake"
+join_st = Path('spam') / 'bacon' / 'eggs' / fol_1
+print(join_st)
