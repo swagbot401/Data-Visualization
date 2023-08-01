@@ -58,8 +58,6 @@ state_list = list(capitals.keys())
 file_quiz_name = "Quiz"
 file_ans_name = "Answer Key for Quiz"
 
-
-
 for i in range(49):
     Ran.shuffle(state_list)
     file_quiz_name = file_quiz_name + " " + str(i)

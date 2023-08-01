@@ -1,6 +1,7 @@
 import random, time
 import os
 from pathlib import Path
+import shelve
 
 boring_7 = Path(r"C:\Users\chris\OneDrive\Desktop\Auto Tech Station\Software Practice\Python_Practice\automate_the_boring_7.py")
 boring_read_me = Path(r"C:\Users\chris\OneDrive\Desktop\Auto Tech Station\Software Practice\Python_Practice\Read_Me.txt")
@@ -20,7 +21,7 @@ boring_7_mod = boring_7.parent
 # print(read_me_content)
 
 write_me_file = open(boring_read_me, "w")
-write_me_file.write("Hello Governor!\nThis is my first time writing to a file!")
+write_me_file.write("Hello Governor!\nThis is my first time writing to a file!\n")
 write_me_file.close()
 
 write_me_file = open(boring_read_me, "a")

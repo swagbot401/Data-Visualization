@@ -1,7 +1,7 @@
 import random as Ran
 import os
 from pathlib import Path
-
+import shelve
 
 # randomQuizGenerator.py - Creates quizzes with question and answers in
 # random order, along with the answer key.
@@ -46,18 +46,17 @@ capital_list = list(capitals.values())
 
 
 
-file_quiz_name = "Quiz"
+quiz_name_file = "Quiz"
+ans_sheet_name_file = "Answer_Sheet"
 file_ans_name = "Answer Key for Quiz"
 QUIZ_COUNT = 5
-
-
-
+answer_table = []
 
 for files in range(QUIZ_COUNT):
     Ran.shuffle(state_list)
     
-    file_quiz_name = file_quiz_name + " " + str(files + 1)
-    file_gen = open(file_quiz_name, "w")
+    quiz_name_file = quiz_name_file + " " + str(files + 1)
+    file_gen = open(quiz_name_file, "w")
     file_gen.write(f"Quiz {files + 1} \nWhat are the capitols of each state? \n\n")
 
     for question in range(len(state_list)):
@@ -74,7 +73,25 @@ for files in range(QUIZ_COUNT):
             file_gen.write(f"{choice_head}.  {answer_choices[choice_num]}\n")
             
         file_gen.write("  -------------------------------------------------\n")
+        
+        correct_answer_index = answer_choices.index(correct_ans)
 
+        correct_answer_final = "ABCD"[correct_answer_index]
 
-    file_quiz_name = file_quiz_name[0:4]
+        answer_table.append(f"{str(question + 1)}. {correct_answer_final}")
+
+    
+    ans_sheet_name_file = ans_sheet_name_file + " " + str(files + 1)
+    ans_gen = open(ans_sheet_name_file, "w")
+    
+    for entry in range(len(answer_table)):
+        ans_gen.write(answer_table[entry] + "\n")
+
+    ans_sheet_name_file = ans_sheet_name_file[0:12]
+    answer_table.clear()
+    ans_gen.close()
+
+    
+
+    quiz_name_file = quiz_name_file[0:4]
 file_gen.close()
